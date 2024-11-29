@@ -7,34 +7,50 @@ body {
     color: #333;
 }
 
+/* Style pour le menu */
+nav {
+    background-color: #0078d7;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffdd57;
+}
+
 /* Style pour l'en-tête */
 header {
     background: #0078d7;
     color: #fff;
-    padding: 20px 0;
+    padding: 50px 0;
     text-align: center;
 }
 
-/* Style pour le contenu principal */
-main {
+/* Style des sections */
+section {
     padding: 20px;
     text-align: center;
-}
-
-/* Style pour le bouton */
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    color: #fff;
-    background: #0078d7;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.button:hover {
-    background: #005bb5;
 }
 
 /* Style pour le pied de page */
@@ -43,7 +59,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
