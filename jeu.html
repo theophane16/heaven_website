@@ -7,43 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="jeu">
-    <!-- Conteneur du menu -->
-    <div id="menu-placeholder"></div>
-
+    
 
     <!-- Contenu principal -->
     <div class="main-content">
         <h1>Jeu</h1>
         <p>Bienvenue dans la section Jeu !</p>
     </div>
-
-    <script>
-        // Charge le menu
-        fetch("menu.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("menu-placeholder").innerHTML = data;
-
-                // Identifier la page courante et ajouter la classe "active"
-                const currentPage = document.body.getAttribute("data-page");
-                const links = document.querySelectorAll('#menu-container a');
-                links.forEach(link => {
-                    if (link.dataset.page === currentPage) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Choisir quel menu afficher (latéral ou horizontal)
-                const sidebar = document.querySelector('.sidebar');
-                const header = document.querySelector('.header');
-                if (currentPage === 'index') {
-                    sidebar.style.display = 'block';
-                    header.style.display = 'none';
-                } else {
-                    sidebar.style.display = 'none';
-                    header.style.display = 'block';
-                }
-            });
-    </script>
 </body>
 </html>

@@ -3,46 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Mon Site</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page = "index">
-    <!-- Conteneur du menu -->
-    <div id="menu-placeholder"></div>
+<body data-page="index">
+    <!-- Menu (toujours fixe) -->
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#" data-page="accueil" class="menu-link">Accueil</a></li>
+            <li><a href="#" data-page="recaps" class="menu-link">Recaps</a></li>
+            <li><a href="#" data-page="jeu" class="menu-link">Jeu</a></li>
+            <li><a href="#" data-page="ctf" class="menu-link">CTF</a></li>
+            <li><a href="#" data-page="contacts" class="menu-link">Contacts</a></li>
+        </ul>
+    </div>
 
     <!-- Contenu principal -->
-    <div class="main-content">
+    <div id="main-content">
         <h1>Bienvenue sur le site</h1>
         <p>Ceci est la page d'accueil. Utilisez le menu pour naviguer.</p>
     </div>
 
-    <script>
-        // Charge le menu
-        fetch("menu.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("menu-placeholder").innerHTML = data;
-
-                // Identifier la page courante et ajouter la classe "active"
-                const currentPage = document.body.getAttribute("data-page");
-                const links = document.querySelectorAll('#menu-container a');
-                links.forEach(link => {
-                    if (link.dataset.page === currentPage) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Choisir quel menu afficher (latéral ou horizontal)
-                const sidebar = document.querySelector('.sidebar');
-                const header = document.querySelector('.header');
-                if (currentPage === 'index') {
-                    sidebar.style.display = 'block';
-                    header.style.display = 'none';
-                } else {
-                    sidebar.style.display = 'none';
-                    header.style.display = 'block';
-                }
-            });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
