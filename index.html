@@ -3,39 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site avec Menu</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Menu de navigation -->
-    <nav>
-        <ul class="menu">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#a-propos">À propos</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <!-- Menu latéral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="recaps.html">Recaps</a></li>
+                <li><a href="jeu.html">Jeu</a></li>
+                <li><a href="ctf.html">CTF</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
 
-    <!-- En-tête -->
-    <header id="accueil">
-        <h1>Bienvenue sur mon site</h1>
-    </header>
-
-    <!-- Section À propos -->
-    <section id="a-propos">
-        <h2>À propos</h2>
-        <p>Ce site a été créé pour apprendre les bases du développement web avec HTML et CSS.</p>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Envoyez-nous un message à <a href="mailto:exemple@mail.com">exemple@mail.com</a>.</p>
-    </section>
-
-    <!-- Pied de page -->
-    <footer>
-        <p>&copy; 2024 MonSite. Tous droits réservés.</p>
-    </footer>
+        <!-- Contenu principal -->
+        <main>
+            <h1>Bienvenue sur le site</h1>
+            <p>Ceci est la page d'accueil. Utilisez le menu à gauche pour naviguer entre les sections.</p>
+        </main>
+    </div>
 </body>
 </html>
