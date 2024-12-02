@@ -52,12 +52,14 @@ function loadPage(page) {
                 `;
                 break;
             default:
+                // Si la page n'est pas trouvée, afficher "accueil" par défaut
                 pageContent = `
-                    <h1>Page non trouvée</h1>
-                    <p>Cette page n'existe pas.</p>
+                    <h1>Bienvenue sur le site</h1>
+                    <p>Ceci est la page d'accueil. Utilisez le menu pour naviguer.</p>
                 `;
                 break;
         }
+        
 
         // Insérer le contenu par défaut dans le main-content
         document.getElementById('main-content').innerHTML = pageContent;
