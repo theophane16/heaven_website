@@ -1,18 +1,33 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recaps</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body data-page = "recaps">
-
-    <!-- Contenu principal -->
-    <div class="main-content">
-        <h1>Recaps</h1>
-        <p>Bienvenue dans la section Recaps !</p>
+<!-- recaps.html -->
+<div id="recaps-content">
+    <h1>Recaps</h1>
+    <p>Bienvenue dans la section Recaps ! Cliquez sur un thème pour explorer.</p>
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header">Thème 1 : Introduction</button>
+            <div class="accordion-content">
+                <p>Contenu du Thème 1. Cliquez pour le plier ou déplier.</p>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Sous-thème 1.1</button>
+                        <div class="accordion-content">
+                            <p>Contenu du sous-thème 1.1</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Sous-thème 1.2</button>
+                        <div class="accordion-content">
+                            <p>Contenu du sous-thème 1.2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">Thème 2 : Concepts avancés</button>
+            <div class="accordion-content">
+                <p>Contenu du Thème 2. Cliquez pour le plier ou déplier.</p>
+            </div>
+        </div>
     </div>
-
-</body>
-</html>
+</div>
