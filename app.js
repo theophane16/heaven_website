@@ -29,33 +29,36 @@ function loadPage(page) {
         switch (page) {
             case "accueil":
                 pageContent = `
-                    <h1>Bienvenue sur le site</h1>
-                    <p>Ceci est la page d'accueil. Utilisez le menu pour naviguer.</p>
+                    <h1>Bienvenue sur mon site</h1>
+                    <p>Il contient pleins de petites choses pour que je m'en souvienne.</p>
                 `;
                 break;
             case "jeu":
                 pageContent = `
                     <h1>Jeu</h1>
-                    <p>Explorez notre section dédiée aux jeux !</p>
+                    <p>Un jour ce sera mis à jour avec LE jeu de l'année...</p>
                 `;
                 break;
             case "ctf":
                 pageContent = `
                     <h1>CTF</h1>
-                    <p>Bienvenue dans la section CTF !</p>
+                    <p>Discussion encore en cours.</p>
+                    <p>TryHackMe</p>
+                    <p>RootMe</p>
+                    <p>HackTheBox</p>
                 `;
                 break;
             case "contacts":
                 pageContent = `
                     <h1>Contacts</h1>
-                    <p>Contactez-nous via ce formulaire.</p>
+                    <p>un ptit mail ?</p>
                 `;
                 break;
             default:
                 // Si la page n'est pas trouvée, afficher "accueil" par défaut
                 pageContent = `
-                    <h1>Bienvenue sur le site</h1>
-                    <p>Ceci est la page d'accueil. Utilisez le menu pour naviguer.</p>
+                    <h1>Bienvenue sur mon site</h1>
+                    <p>Il contient pleins de petites choses pour que je m'en souvienne.</p>
                 `;
                 break;
         }

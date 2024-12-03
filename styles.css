@@ -117,3 +117,37 @@ body {
 .accordion-content.show {
     display: block;
 }
+
+/* Style par défaut pour les headers d'accordéon 
+.accordion-header {
+    background-color: #f0f0f0; 
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+*/
+
+/* Style pour les headers d'accordéon imbriqués (second_type) */
+.accordion-header.second_type {
+    background-color: #c446ff;/* Une couleur différente pour les éléments imbriqués */
+    /*color: #222;*/
+    color: #fff;
+}
+.accordion-header.second_type:hover {
+    background-color: #850cbd;/* Une couleur différente pour les éléments imbriqués */
+    color: #ffffff;
+}
+
+/* Quand l'accordéon est ouvert, changer le fond pour une meilleure visibilité */
+.accordion-header.second_type.active {
+    background-color: #a9a9a9; /* Une couleur différente pour l'élément actif */
+}
+
+.accordion-header.active {
+    background-color: #cccccc; /* Couleur de fond des éléments principaux ouverts */
+}
+
