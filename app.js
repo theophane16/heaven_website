@@ -124,3 +124,19 @@ function closePdfModal() {
     document.getElementById("pdfModal").style.display = "none";
     document.getElementById("pdfFrame").src = ""; // Nettoyer l'iframe
 }
+
+// Fonction pour ouvrir/fermer le menu
+function toggleMenu() {
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.getElementById('main-content');
+    
+    // Si le menu est ouvert, on le ferme et vice versa
+    sidebar.classList.toggle('open');
+    
+    // On ajuste la marge du contenu principal en fonction de l'état du menu
+    if (sidebar.classList.contains('open')) {
+        mainContent.style.marginLeft = '250px'; // Menu ouvert
+    } else {
+        mainContent.style.marginLeft = '0'; // Menu fermé
+    }
+}
