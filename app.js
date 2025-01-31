@@ -128,15 +128,25 @@ function closePdfModal() {
 // Fonction pour ouvrir/fermer le menu
 function toggleMenu() {
     const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.getElementById('main-content');
-    
-    // Si le menu est ouvert, on le ferme et vice versa
-    sidebar.classList.toggle('open');
-    
-    // On ajuste la marge du contenu principal en fonction de l'état du menu
-    if (sidebar.classList.contains('open')) {
-        mainContent.style.marginLeft = '250px'; // Menu ouvert
-    } else {
-        mainContent.style.marginLeft = '0'; // Menu fermé
+    const mainContent = document.getElementById('recaps-content');
+
+    // Vérifier la taille de l'écran (mobile seulement)
+    if (window.innerWidth < 768) {
+        sidebar.classList.toggle('open');
+
+        // Ajuster le margin du contenu principal
+        if (sidebar.classList.contains('open')) {
+            mainContent.style.marginLeft = '250px';
+        } else {
+            mainContent.style.marginLeft = '0';
+        }
     }
 }
+
+// Vérifier au chargement si on est sur desktop pour afficher la sidebar
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth >= 768) {
+        document.querySelector('.sidebar').classList.add('open');
+    }
+});
+
