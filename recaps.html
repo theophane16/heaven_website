@@ -1,4 +1,3 @@
-<!-- recaps.html -->
 <div id="recaps-content">
     <h1>Recaps</h1>
     <p>Bienvenue dans la section Recaps ! Cliquez sur un thème pour explorer.</p>
@@ -14,7 +13,8 @@
                             <p>Keywords :</p>
                             <p>Tools / Websites :</p>
                             <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-                            <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+                            <a href="" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+                            
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -22,6 +22,7 @@
                         <div class="accordion-content">
                             <p>Keywords :</p>
                             <p>Tools / Websites :</p>
+                            <a href="#" class="view-pdf" onclick="openPdfModal(event, './crypto_symm.pdf')">Questions générales</a>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -52,7 +53,9 @@
                             <p>Keywords : </p>
                             <p>Tools / Websites :</p>
                             <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-                            <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+                            <a href="#" class="view-pdf" onclick="openPdfModal(event, './infra_Question_part1.pdf')">Questions générales</a>
+                            <p></p>
+                            <a href="#" class="view-pdf" onclick="openPdfModal(event, './infra_part1.pdf')">Cours</a>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -76,7 +79,7 @@
                             <p>Keywords : </p>
                             <p>Tools / Websites :</p>
                             <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-                            <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+                            <a href="#" class="view-pdf" onclick="openPdfModal(event, './physical_part.pdf')">Notions Physical</a>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -107,7 +110,7 @@
                             <p>Keywords : </p>
                             <p>Tools / Websites :</p>
                             <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-                            <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+                           
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -115,6 +118,7 @@
                         <div class="accordion-content">
                             <p>Keywords : </p>
                             <p>Tools / Websites :</p>
+                            <a href="#" class="view-pdf" onclick="openPdfModal(event, './software_security.pdf')">Notions Software Security</a>
                         </div>
                     </div>
                 </div>
@@ -131,7 +135,7 @@
                             <p>Keywords : </p>
                             <p>Tools / Websites :</p>
                             <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-                            <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+                            <a href="#" class="view-pdf" onclick="openPdfModal(event, './advanced_security.pdf')">Notions Software Security</a>
                         </div>
                     </div>
                     <div class="accordion-item">
@@ -152,16 +156,12 @@
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Lien pour télécharger le PDF -->
-    <div class="download-section">
-        <h2>Téléchargez le document PDF</h2>
-        <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-        <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
-    </div>
-    <div class="download-section">
-        <h2>For the Markdown_important infos</h2>
-        <p>Cliquez sur le lien ci-dessous pour télécharger le document PDF.</p>
-        <a href="./Planning exam CySec S9 2024-2025.pdf" download="Recap_Document.pdf" class="download-link">Télécharger le PDF</a>
+<!-- Modale pour afficher le PDF -->
+<div id="pdfModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePdfModal()">&times;</span>
+        <iframe id="pdfFrame" width="100%" height="500px"></iframe>
     </div>
 </div>

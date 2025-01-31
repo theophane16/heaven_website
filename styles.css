@@ -151,3 +151,67 @@ body {
     background-color: #cccccc; /* Couleur de fond des éléments principaux ouverts */
 }
 
+/* Modale (background) */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Fixée à l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre pour l'effet modale */
+    z-index: 1000;
+    justify-content: center; /* Centrer le contenu */
+    align-items: center; /* Centrer le contenu */
+    overflow: hidden; /* Empêche le défilement */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    width: 100%; /* Prendre toute la largeur disponible */
+    height: 100%; /* Prendre toute la hauteur disponible */
+    position: relative;
+}
+
+/* Iframe pour afficher le PDF */
+#pdfFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red; /* Couleur rouge pour la croix */
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100; /* S'assurer qu'il soit au-dessus de l'iframe */
+}
+
+/* Survol du bouton de fermeture */
+.close:hover,
+.close:focus {
+    color: #ff6666; /* Rouge plus clair au survol */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media query pour les petits écrans (mobile) */
+@media (max-width: 768px) {
+    /* Ajuster la taille de la modale sur les petits écrans */
+    .modal-content {
+        width: 95%; /* Prendre presque toute la largeur de l'écran */
+        height: 90%; /* Prendre presque toute la hauteur */
+    }
+    
+    /* Réduire la taille de la croix pour les petits écrans */
+    .close {
+        font-size: 25px; /* Plus petit pour mieux s'adapter */
+        top: 5px;
+        right: 5px;
+    }
+}
