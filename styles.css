@@ -248,19 +248,20 @@ body {
         left: -250px; /* Cache complètement le menu */
         width: 250px;
         height: 100%;
-        background: white; /* Change pour ton design */
+        background: white;
         transition: left 0.3s ease-in-out;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Assure que le menu est au-dessus */
     }
 
     .sidebar.open {
         left: 0 !important;
-        background: blue !important; /* TEST : Bleu pour voir si ça s'affiche */
     }
 
     /* Si tu as un menu de type "toggle", ajuste le contenu pour qu'il se déplace avec le menu */
     #main-content {
         margin-left: 0;
+        width: 100%; /* Force à occuper tout l'écran */
         transition: margin-left 0.3s ease;
     }
 
