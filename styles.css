@@ -240,16 +240,6 @@ body {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Afficher le bouton sur mobile */
-        position: fixed;
-        top: 10px; /* Ajuste la hauteur pour ne pas couvrir le titre */
-        right: 10px; /* Garde à droite */
-        z-index: 1100; /* S'assure qu'il est toujours au-dessus */
-        background: white;
-        border: none;
-        padding: 10px;
-        font-size: 20px;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .sidebar {
@@ -278,7 +268,7 @@ body {
 
     .sidebar.open + #main-content {
         /*margin-left: 0 !important; */
-        padding-top: 50px;
+        padding-top: 100px;
     }
 }
 
