@@ -114,17 +114,6 @@ window.addEventListener('popstate', event => {
 const initialPage = detectPageFromURL();
 loadPage(initialPage);
 
-function openPdfModal(event, pdfUrl) {
-    event.preventDefault();  // Empêche le comportement par défaut du lien
-    document.getElementById("pdfFrame").src = pdfUrl;
-    document.getElementById("pdfModal").style.display = "block";
-}
-
-function closePdfModal() {
-    document.getElementById("pdfModal").style.display = "none";
-    document.getElementById("pdfFrame").src = ""; // Nettoyer l'iframe
-}
-
 // Fonction pour ouvrir/fermer le menu
 function toggleMenu() {
     const sidebar = document.querySelector('.sidebar');
