@@ -244,15 +244,18 @@ body {
 
     .sidebar {
         width: 0; /* Masquer le menu sur mobile */
+        left: -250px; /* Déplacer hors écran */
+        transition: all 0.3s ease-in-out;
     }
 
     .sidebar.open {
+        width: 250px; /* Définir une largeur visible */
         left: 0;
     }
 
     /* Si tu as un menu de type "toggle", ajuste le contenu pour qu'il se déplace avec le menu */
     #main-content {
-        margin-left: 0;
+        /*margin-left: 0;*/
         transition: margin-left 0.3s ease;
     }
 
