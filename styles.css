@@ -246,11 +246,15 @@ body {
         width: 0; /* Masquer le menu sur mobile */
         left: -250px; /* Déplacer hors écran */
         transition: all 0.3s ease-in-out;
+        background: red !important; /* TEST : Rouge pour être sûr */
+        overflow-y: auto !important; /* Activation du scroll si besoin */
     }
 
     .sidebar.open {
         width: 250px; /* Définir une largeur visible */
         left: 0;
+        left: 0 !important;
+        background: blue !important; /* TEST : Bleu pour voir si ça s'affiche */
     }
 
     /* Si tu as un menu de type "toggle", ajuste le contenu pour qu'il se déplace avec le menu */
