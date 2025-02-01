@@ -264,11 +264,12 @@ body {
         margin-left: 0;
         width: 100%; /* Force à occuper tout l'écran */
         transition: margin-left 0.3s ease;
+        padding-top: 60px;
     }
 
     .sidebar.open + #main-content {
         /*margin-left: 0 !important; */
-        padding-top: 100px;
+        padding-top: 50px;
     }
 }
 
