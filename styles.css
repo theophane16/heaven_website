@@ -243,28 +243,29 @@ body {
     }
 
     .sidebar {
-        width: 0; /* Masquer le menu sur mobile */
-        left: -250px; /* Déplacer hors écran */
-        transition: all 0.3s ease-in-out;
-        background: red !important; /* TEST : Rouge pour être sûr */
-        overflow-y: auto !important; /* Activation du scroll si besoin */
+        position: fixed;
+        top: 0;
+        left: -250px; /* Cache complètement le menu */
+        width: 250px;
+        height: 100%;
+        background: white; /* Change pour ton design */
+        transition: left 0.3s ease-in-out;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     }
 
     .sidebar.open {
-        width: 250px; /* Définir une largeur visible */
-        left: 0;
         left: 0 !important;
         background: blue !important; /* TEST : Bleu pour voir si ça s'affiche */
     }
 
     /* Si tu as un menu de type "toggle", ajuste le contenu pour qu'il se déplace avec le menu */
     #main-content {
-        /*margin-left: 0;*/
+        margin-left: 0;
         transition: margin-left 0.3s ease;
     }
 
     .sidebar.open + #main-content {
-        margin-left: 250px; /* Décalage du contenu quand le menu est ouvert */
+        margin-left: 0 !important;
     }
 }
 
