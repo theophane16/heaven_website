@@ -1,3 +1,19 @@
+// Gérer le chargement initial via l'URL (GitHub Pages)
+window.onload = function () {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page") || "accueil"; // Par défaut, afficher "accueil"
+    loadPage(page);
+};
+
+// Gérer la navigation avec les boutons "Précédent" et "Suivant"
+window.onpopstate = function (event) {
+    if (event.state && event.state.page) {
+        loadPage(event.state.page);
+    } else {
+        loadPage("accueil");
+    }
+};
+
 // Fonction pour charger le contenu d'une page dynamiquement
 function loadPage(page) {
     // Mettre à jour l'élément actif du menu
@@ -37,28 +53,49 @@ function loadPage(page) {
                 pageContent = `
                     <h1>Jeu</h1>
                     <p>Un jour ce sera mis à jour avec LE jeu de l'année...</p>
+                    <p> Tout est une question de temps <\p>
+                    <p> Mais si vous vous ennuyer allez jouer à Hollow Knight ou Outer Wilds, j'aurai bien rajouté Silksong mais bon...<\p> 
+                    <p> Une fois fait on pourra débattre des musiques notamment celle-ci : <a href="https://www.youtube.com/watch?v=Xpkc-NU1KA0" target="_blank" rel="noopener noreferrer"> Une petite dose de nostalgie ? </a><\p>
                 `;
                 break;
             case "ctf":
                 pageContent = `
                     <h1>CTF</h1>
-                    <p>Discussion encore en cours.</p>
-                    <p>TryHackMe</p>
-                    <p>RootMe</p>
-                    <p>HackTheBox</p>
+                    <p>Plateformes en ligne de CTF.</p>
+                    <ul>
+                        <li>TryHackMe</li>
+                        <li>HackTheBox</li>
+                        <li>RootMe</li>
+                    </ul>
+                    <p><strong>Conférences et CTF en présentiels :</strong></p>
+                    <ul>
+                        <li>GreHack 2024 <a href="https://grehack.fr/" target="_blank" rel="noopener noreferrer"> (ici) </a></li>
+                        <ul>
+                            <li>Equipe : M2CSI+1</li>
+                            <li>L'envolée de l'équipe à un moment M de la compétition :  <img src="./score GreHack non final.png" alt="Pour se rappeler que dans la vie il y a des hauts" width="600" height="400"></li>
+                            <li>Score final : 1770</li>
+                            <li>Place : 24/38</li>
+                            <li>Conclusion : la plus grande qualité que l'on apprend en CTF est la résilience...</li>
+                            <li>Défis performés : Stéganographie / Cryptologie / OSINT / SOC...</li>
+                        </ul>
+                    </ul>
+                    
                 `;
                 break;
             case "contacts":
                 pageContent = `
                     <h1>Contacts</h1>
-                    <p>un ptit mail ?</p>
+                    <p>Contactez moi par mail : </p>
+                    <a href="mailto:theophane.paradis@etu.univ-grenoble-alpes.fr">theophane.paradis@etu.univ-grenoble-alpes.fr</a>
+                    <p>Ou via LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/theophane-paradis/" target="_blank" rel="noopener noreferrer"> Mon profil LinkedIn </a>
                 `;
                 break;
             default:
                 // Si la page n'est pas trouvée, afficher "accueil" par défaut
                 pageContent = `
                     <h1>Bienvenue sur mon site</h1>
-                    <p>Il contient pleins de petites choses pour que je m'en souvienne.</p>
+                    <p>En complément du CV ou juste pour un trou de mémoire.</p>
                 `;
                 break;
         }
