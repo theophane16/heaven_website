@@ -64,7 +64,7 @@ body {
 
 /* Survol du lien actif : changer la couleur en bleu clair (Kali Linux) */
 .sidebar a.active:hover {
-    background-color: #3498db; /* bleu clair */
+    background-color: #008165; /* bleu clair */
     color: #ecf0f1; /* garder le texte blanc */
 }
 
@@ -92,10 +92,10 @@ body {
 
 /* Bouton pour le header */
 .accordion-header {
-    background-color: #3498db;
+    background-color: #148ad8;
     color: #fff;
     padding: 15px;
-    text-align: left;
+    text-align:left;
     border: none;
     width: 100%;
     font-size: 16px;
@@ -118,6 +118,24 @@ body {
     background-color: #2980b9;
 }
 
+/* Pour les outils */
+.new_type {
+    background-color: #00922c;
+}
+
+.new_type:hover {
+    background-color: #007022;
+}
+
+.accordion-header.second_type.troisieme_type {
+    background-color: #b4000f;
+    color: white;
+}
+
+.accordion-header.second_type.troisieme_type:hover {
+    background-color: #97010d;
+}
+
 /* Affichage du contenu déplié */
 .accordion-content.show {
     display: block;
@@ -138,12 +156,12 @@ body {
 
 /* Style pour les headers d'accordéon imbriqués (second_type) */
 .accordion-header.second_type {
-    background-color: #c446ff;/* Une couleur différente pour les éléments imbriqués */
+    background-color: #ff9900;/* Une couleur différente pour les éléments imbriqués */
     /*color: #222;*/
-    color: #fff;
+    color: #000000;
 }
 .accordion-header.second_type:hover {
-    background-color: #850cbd;/* Une couleur différente pour les éléments imbriqués */
+    background-color: #ee8f00;/* Une couleur différente pour les éléments imbriqués */
     color: #ffffff;
 }
 
