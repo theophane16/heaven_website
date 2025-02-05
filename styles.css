@@ -93,7 +93,7 @@ body {
 /* Bouton pour le header */
 .accordion-header {
     background-color: #148ad8;
-    color: #fff;
+    color: #000000;
     padding: 15px;
     text-align:left;
     border: none;
@@ -135,6 +135,16 @@ body {
 .accordion-header.second_type.troisieme_type:hover {
     background-color: #97010d;
 }
+
+.accordion-header.second_type.legende {
+    background-color: #ffffff;
+    color: #757575;
+}
+
+.accordion-header.second_type.legende:hover {
+    background-color: #adadad;
+}
+
 
 /* Affichage du contenu déplié */
 .accordion-content.show {

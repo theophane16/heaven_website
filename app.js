@@ -43,14 +43,16 @@ function loadPage(page, updateHistory = true) {
             case "accueil":
                 pageContent = `
                     <h1>Bienvenue sur mon site</h1>
-                    <p>Il contient pleins de petites choses pour que je m'en souvienne.</p>
-                    <p>Pour avoir une vue d'ensemble des sections : </p>
+                    <p>Mon site pense bête, je ressemble pas à ça : ↓</p> <img src="./vegapunk.webp">
+                    <p>En complément du CV pour avoir une image plus claire de mes connaissances.</p> 
+                    <p>Vue d'ensemble des sections : </p>
                     <ul>
                         <li>La section <strong> Recaps </strong> contient des notions importantes que j'ai pu voir en cours notamment.</li>
                         <li>La section <strong> CTF </strong> sur mes expériences des Capture The Flag (en ligne ou événements) </li>
                         <li>La section <strong> Jeu </strong> est censée avoir un fichier d'un de mes jeux mais les aléas font que...</li>
                         <li>La section <strong> Contact </strong> contient mon mail, une redirection Lnikedin, mon CV en français et anglais.</li>
                     </ul>
+                    <h2><img src="./BULLE-Site-icon.png" alt="TPFLAG{Icon.png}"width="300" height="300"></h2>
                 `;
                 break;
             case "jeu":
