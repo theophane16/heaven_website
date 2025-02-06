@@ -42,17 +42,17 @@ function loadPage(page, updateHistory = true) {
         switch (page) {
             case "accueil":
                 pageContent = `
-                    <h1>Bienvenue sur mon site</h1>
-                    <p>Mon site pense bête, je ressemble pas à ça : ↓</p> <img src="./vegapunk.webp">
-                    <p>En complément du CV pour avoir une image plus claire de mes connaissances.</p> 
+                    <h1>Mon site pense-bête</h1>
+                    <p>Pour stocker des connaissances et des futurs projets.</p> 
+                    <p>Pourquoi  ↓</p> <img src="./vegapunk.webp">
+                    <p>Effectivement ce n'est pas moi, j'ai pas eu droit à une capacité de stockage aussi grande...
                     <p>Vue d'ensemble des sections : </p>
                     <ul>
-                        <li>La section <strong> Recaps </strong> contient des notions importantes que j'ai pu voir en cours notamment.</li>
-                        <li>La section <strong> CTF </strong> sur mes expériences des Capture The Flag (en ligne ou événements) </li>
-                        <li>La section <strong> Jeu </strong> est censée avoir un fichier d'un de mes jeux mais les aléas font que...</li>
-                        <li>La section <strong> Contact </strong> contient mon mail, une redirection Lnikedin, mon CV en français et anglais.</li>
+                        <li>La section <strong> Recaps </strong> contient des notions importantes (des cours et autres).</li>
+                        <li>La section <strong> CTF </strong> sur mes expériences des Capture The Flag (en ligne ou événements). </li>
+                        <li>La section <strong> Jeu </strong> accueillera peut-être un super jeu un jour, mais les aléas font que...</li>
+                        <li>La section <strong> Contact </strong>... ai-je vraiment besoin d'aller plus loin ?</li>
                     </ul>
-                    <h2><img src="./BULLE-Site-icon.png" alt="TPFLAG{Icon.png}"width="300" height="300"></h2>
                 `;
                 break;
             case "jeu":
@@ -104,9 +104,15 @@ function loadPage(page, updateHistory = true) {
                 // Si la page n'est pas trouvée, afficher "accueil" par défaut
                 pageContent = `
                     <h1>Bienvenue sur mon site</h1>
-                    <h2><img src="./BULLE-Site-icon.png" alt="TPFLAG{Icon.png}"width="300" height="300"></h2>
-                    <p>En complément du CV ou juste pour un trou de mémoire.</p>
-                    <p>Si vous cherchez mon CV contactez moi via mon mail ou linkedIn<\p>
+                    <p>Mon site pense bête, je ressemble pas à ça : ↓</p> <img src="./vegapunk.webp">
+                    <p>En complément du CV pour avoir une image plus claire de mes connaissances.</p> 
+                    <p>Vue d'ensemble des sections : </p>
+                    <ul>
+                        <li>La section <strong> Recaps </strong> contient des notions importantes que j'ai pu voir en cours notamment.</li>
+                        <li>La section <strong> CTF </strong> sur mes expériences des Capture The Flag (en ligne ou événements) </li>
+                        <li>La section <strong> Jeu </strong> accueillera peut-être un super jeu un jour, mais les aléas font que...</li>
+                        <li>La section <strong> Contact </strong>... celle là ce doit être assez clair.</li>
+                    </ul>
                 `;
                 break;
         }
