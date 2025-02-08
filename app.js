@@ -1,14 +1,14 @@
 // Gérer le chargement initial via l'URL (GitHub Pages)
 window.onload = function () {
     const params = new URLSearchParams(window.location.search);
-    const page = params.get("page") || "accueil"; // Par défaut, afficher "accueil"
-    loadPage(page, false); // Ne pas pushState ici pour éviter la boucle infinie
+    const page = params.get("page") || "accueil";               // Par défaut, afficher "accueil"
+    loadPage(page, false);                                      // Ne pas pushState ici pour éviter la boucle infinie
 };
 
-// Gérer la navigation avec les boutons "Précédent" et "Suivant"
+// Gérer la navigation avec les boutons "Précédent" et "Suivant" ; ne plus avoir de pages mal chargées
 window.onpopstate = function (event) {
     if (event.state && event.state.page) {
-        loadPage(event.state.page, false); // Ne pas modifier l'historique ici non plus
+        loadPage(event.state.page, false);                      // Ne pas modifier l'historique ici non plus
     } else {
         loadPage("accueil", false);
     }
@@ -36,7 +36,7 @@ function loadPage(page, updateHistory = true) {
             })
             .catch(err => console.warn('Erreur de chargement de recaps.html', err));
     } else {
-        // Définir le contenu des autres pages
+        // Le contenu des autres pages
         let pageContent = "";
 
         switch (page) {
@@ -44,8 +44,8 @@ function loadPage(page, updateHistory = true) {
                 pageContent = `
                     <h1>Mon site pense-bête</h1>
                     <p>Pour stocker des connaissances et des futurs projets.</p> 
-                    <p>Pourquoi  ↓</p> <img src="./vegapunk.webp">
-                    <p>Effectivement ce n'est pas moi, j'ai pas eu droit à une capacité de stockage aussi grande...
+                    <p>Pourquoi faire ? ↓</p> <img src="./img/vegapunk.webp" weight=125 height=420>
+                    <p>Et non ce n'est pas moi, je n'ai pas eu droit à une capacité de stockage aussi grande...
                     <p>Vue d'ensemble des sections : </p>
                     <ul>
                         <li>La section <strong> Recaps </strong> contient des notions importantes (des cours et autres).</li>
@@ -57,7 +57,7 @@ function loadPage(page, updateHistory = true) {
                 break;
             case "jeu":
                 pageContent = `
-                    <h1>Jeu</h1>
+                    <h1>Jeu <img src="./img/radiance.png"width=30 height=30></h1>
                     <p>Un jour ce sera mis à jour avec LE jeu de l'année...</p>
                     <p> Tout est une question de temps </p>
                     <p> Mais si vous vous ennuyez, allez jouer à Hollow Knight ou Outer Wilds, j'aurai bien rajouté Silksong mais bon...</p> 
@@ -81,7 +81,7 @@ function loadPage(page, updateHistory = true) {
                             <li>Equipe : M2CSI+1</li>
                             <li>L'envolée de l'équipe à un moment M de la compétition :
                                 <p><\p>
-                                <img src="./score GreHack non final.png" alt="Pour se rappeler que dans la vie il y a des hauts" width="600" height="400">
+                                <img src="./img/score GreHack non final.png" alt="Pour se rappeler que dans la vie il y a des hauts" width="600" height="400">
                             </li>
                             <li>Score final : 1770</li>
                             <li>Place : 24/38</li>
@@ -103,15 +103,16 @@ function loadPage(page, updateHistory = true) {
             default:
                 // Si la page n'est pas trouvée, afficher "accueil" par défaut
                 pageContent = `
-                    <h1>Bienvenue sur mon site</h1>
-                    <p>Mon site pense bête, je ressemble pas à ça : ↓</p> <img src="./vegapunk.webp">
-                    <p>En complément du CV pour avoir une image plus claire de mes connaissances.</p> 
+                    <h1>Mon site pense-bête</h1>
+                    <p>Pour stocker des connaissances et des futurs projets.</p> 
+                    <p>Pourquoi faire ? ↓</p> <img src="./img/vegapunk.webp" weight=125 height=420>
+                    <p>Et non ce n'est pas moi, je n'ai pas eu droit à une capacité de stockage aussi grande...
                     <p>Vue d'ensemble des sections : </p>
                     <ul>
-                        <li>La section <strong> Recaps </strong> contient des notions importantes que j'ai pu voir en cours notamment.</li>
-                        <li>La section <strong> CTF </strong> sur mes expériences des Capture The Flag (en ligne ou événements) </li>
+                        <li>La section <strong> Recaps </strong> contient des notions importantes (des cours et autres).</li>
+                        <li>La section <strong> CTF </strong> sur mes expériences des Capture The Flag (en ligne ou événements). </li>
                         <li>La section <strong> Jeu </strong> accueillera peut-être un super jeu un jour, mais les aléas font que...</li>
-                        <li>La section <strong> Contact </strong>... celle là ce doit être assez clair.</li>
+                        <li>La section <strong> Contact </strong>... ai-je vraiment besoin d'aller plus loin ?</li>
                     </ul>
                 `;
                 break;
@@ -152,16 +153,16 @@ function detectPageFromURL() {
 // Gérer les clics sur les liens du menu
 document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', event => {
-        event.preventDefault(); // Empêcher le rechargement de la page
-        const page = link.dataset.page; // Récupérer la page correspondante
-        loadPage(page); // Charger le contenu de la page
+        event.preventDefault();                     // Empêcher le rechargement de la page
+        const page = link.dataset.page;             // Récupérer la page correspondante
+        loadPage(page);                             // Charger le contenu de la page
     });
 });
 
 // Gérer la navigation via les boutons "Précédent" et "Suivant" du navigateur
 window.addEventListener('popstate', event => {
-    const page = event.state?.page || detectPageFromURL(); // Récupérer la page depuis l'historique ou l'URL
-    loadPage(page); // Charger la page correspondante
+    const page = event.state?.page || detectPageFromURL();  // Récupérer la page depuis l'historique ou l'URL
+    loadPage(page);                                         // Charger la page correspondante
 });
 
 // Charger la page initiale
@@ -173,7 +174,7 @@ function toggleMenu() {
     const sidebar = document.querySelector('.sidebar');
     const mainContent = document.getElementById('recaps-content');
 
-    // Vérifier la taille de l'écran (mobile seulement)
+    // Vérifier la taille de l'écran (mobile seulement mais marche sur ordi aussi)
     if (window.innerWidth < 768) {
         sidebar.classList.toggle('open');
 
