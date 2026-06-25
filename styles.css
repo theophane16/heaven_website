@@ -1,0 +1,299 @@
+/* Réinitialisation */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+/* Menu latéral */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;   /* Le mettre en dehors de l'écran */
+    height: 100%;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    overflow-x: hidden;
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+
+.sidebar h2 {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+/* Style de base pour les liens dans le menu */
+.sidebar a {
+    text-decoration: none;
+    color: #ecf0f1;         /* couleur par défaut */
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Style pour le lien actif */
+.sidebar a.active {
+    background-color: #16a085;  
+    color: white;               
+    font-weight: bold;
+}
+
+/* Survol des liens : couleur de fond légèrement plus claire */
+.sidebar a:hover {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+/* Survol du lien actif : */
+.sidebar a.active:hover {
+    background-color: #008165; 
+    color: #ecf0f1; 
+}
+
+/* Contenu principal */
+#main-content {
+    margin-left: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f4f4f9;
+}
+
+/* Accordéon de base */
+.accordion {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Élément de l'accordéon */
+.accordion-item {
+    margin: 5px 0;
+}
+
+/* Bouton pour le header */
+.accordion-header {
+    background-color: #148ad8;
+    color: #000000;
+    padding: 15px;
+    text-align:left;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Style du contenu caché */
+.accordion-content {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* Survol du header */
+.accordion-header:hover {
+    background-color: #2980b9;
+}
+
+/* Pour les outils */
+.new_type {
+    background-color: #00922c;
+}
+
+.new_type:hover {
+    background-color: #007022;
+}
+
+.accordion-header.second_type.troisieme_type {
+    background-color: #b4000f;
+    color: white;
+}
+
+.accordion-header.second_type.troisieme_type:hover {
+    background-color: #97010d;
+}
+
+.accordion-header.second_type.legende {
+    background-color: #ffffff;
+    color: #757575;
+}
+
+.accordion-header.second_type.legende:hover {
+    background-color: #adadad;
+}
+
+
+/* Affichage du contenu déplié */
+.accordion-content.show {
+    display: block;
+}
+
+/* Style pour les headers d'accordéon imbriqués (second_type) */
+.accordion-header.second_type {
+    background-color: #ff9900;      
+    color: #000000;
+}
+.accordion-header.second_type:hover {
+    background-color: #ee8f00;      
+    color: #ffffff;
+}
+
+/* Quand l'accordéon est ouvert, changer le fond pour une meilleure visibilité */
+.accordion-header.second_type.active {
+    background-color: #a9a9a9;     
+}
+
+.accordion-header.active {
+    background-color: #cccccc; 
+}
+
+/* Modale (background) */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Fixée à l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre pour l'effet modale */
+    z-index: 1000;
+    justify-content: center;    /* Centrer le contenu */
+    align-items: center;        /* Centrer le contenu */
+    overflow: hidden;           /* Empêche le défilement */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    width: 100%;        /* Prendre toute la largeur disponible */
+    height: 100%;       /* Prendre toute la hauteur disponible */
+    position: relative;
+}
+
+/* Iframe pour afficher le PDF */
+#pdfFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red; /* Couleur rouge pour la croix */
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100; /* S'assurer qu'il soit au-dessus de l'iframe */
+}
+
+/* Survol du bouton de fermeture */
+.close:hover,
+.close:focus {
+    color: #ff6666; /* Rouge plus clair au survol */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media query pour les petits écrans (mobile) */
+@media (max-width: 768px) {
+    /* Ajuster la taille de la modale sur les petits écrans */
+    .modal-content {
+        width: 95%; /* Prendre presque toute la largeur de l'écran */
+        height: 90%; /* Prendre presque toute la hauteur */
+    }
+    
+    /* Réduire la taille de la croix pour les petits écrans */
+    .close {
+        font-size: 25px; /* Plus petit pour mieux s'adapter */
+        top: 5px;
+        right: 5px;
+    }
+}
+
+/* Bouton de toggle pour mobile */
+.menu-toggle {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Afficher le bouton de toggle sur mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Afficher le bouton sur mobile */
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Cache complètement le menu */
+        width: 250px;
+        height: 100%;
+        color: white;
+        background-color: #2c3e50;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Assure que le menu est au-dessus */
+    }
+
+    .sidebar.open {
+        left: 0 !important;
+    }
+
+    /* Si tu as un menu de type "toggle", ajuste le contenu pour qu'il se déplace avec le menu */
+    #main-content {
+        margin-left: 0;
+        width: 100%; /* Force à occuper tout l'écran */
+        transition: margin-left 0.3s ease;
+        padding-top: 60px;
+    }
+
+    .sidebar.open + #main-content {
+        /*margin-left: 0 !important; */
+        padding-top: 50px;
+    }
+}
+
+/* Masquer la sidebar en mode desktop */
+@media screen and (min-width: 768px) {
+    .sidebar {
+        left: 0; /* Toujours visible */
+        width: 250px; /* Largeur fixe */
+    }
+    
+    /* Cacher le bouton toggle sur desktop */
+    .menu-toggle {
+        display: none;
+    }
+}
